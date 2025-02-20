@@ -20,7 +20,14 @@
         <source src="IMG_7166 2025-02-20 02_41_01.mp4" type="video/mp4">
         お使いのブラウザは video タグをサポートしていません。
     </video>
-    
+    <script>
+    document.addEventListener("click", function() {
+        var video = document.getElementById("myVideo");
+        if (video.paused) {
+            video.play();
+        }
+    });
+    </script>
 
     <div class="screenshot-block"></div>
 </body>
