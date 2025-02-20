@@ -1,0 +1,34 @@
+/* 全画面を覆うスクリーンショット防止用オーバーレイ */
+.screenshot-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* 画面を70%暗くする */
+    z-index: 9999;
+    display: none;
+}
+
+/* ユーザーがスクリーンショットを撮った時のスタイル */
+body.screenshot-detected {
+    filter: brightness(0.3); /* 画面を暗くする */
+    transition: filter 0.5s ease-in-out;
+}
+
+/* 選択を防止（コピー防止対策） */
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* スクリーン録画・キャプチャ防止対策（完全ではない） */
+video {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
